@@ -1,0 +1,84 @@
+class MSWord extends Thread
+{
+	public void run()
+	{
+		if(getName().equals("Typing"))
+		{
+			type();
+		}
+		else if(getName().equals("Printing"))
+		{
+			printing();
+		}
+		else
+		{
+		autosave();	
+		}
+	}
+	void type()
+		{
+		System.out.print("Typing started: ");
+		try
+		{
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println("Typing...");
+				Thread.sleep(3000);
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println("Exception handled");
+		}
+		System.out.println("Typing Terminated: ");	
+		}
+		void printing()
+		{
+			System.out.println("Printing started");
+			try
+			{
+				for(int i=1;i<=5;i++)
+				{
+					System.out.println("ABC OAR");
+					Thread.sleep(5000);
+				}
+			}
+			catch (Exception caught)
+			{
+				System.out.println("Exception caught");
+			}
+			System.out.println("Printing completed");
+		}
+		void autosave()
+		{
+			System.out.println("AutoSaving");		
+			try
+		{
+			for(int i=1;i<=5;i++)
+			{
+				System.out.println("Autosaving...");
+				Thread.sleep(3000);
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println("Exception handled");
+		}
+			System.out.println("Autosaving completed");
+		}
+}
+		class LaunchDemo
+			{
+			public static void main(String args[])
+				{
+				MSWord d1=new MSWord();
+				MSWord d2=new MSWord();
+				MSWord d3=new MSWord();
+				d1.setName("Typing");
+				d2.setName("Printing");
+				d3.setName("AutoSaving");
+				d1.start();
+				d2.start();
+				d3.start();
+				}
+			}
