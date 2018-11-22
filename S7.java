@@ -1,0 +1,26 @@
+import java.util.Scanner;
+class S7
+
+{
+	public static void main(String args[])
+	{
+		System.out.print("enter a string :");
+		Scanner scan = new Scanner(System.in);
+		String s=scan.nextLine();
+		String res="";
+		
+		for(int i=0;i<s.length();i++)
+		{
+			if(s.charAt(i)=='a')
+			{
+				res+="*"+s.charAt(i);
+			}
+			else
+			{
+				res+=s.charAt(i);
+			}
+
+		}
+		System.out.println(res);          ///b*an*an*a
+	}
+}

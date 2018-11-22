@@ -1,0 +1,66 @@
+import java.util.Scanner;
+class Sss
+
+{
+	public static void main(String args[])
+	{
+		
+	int count=0;
+	Scanner scan=new Scanner(System.in);
+	String s=scan.nextLine();
+	for(int i=0;i<s.length()-1;i++)
+	{
+		if(s.charAt(i)==' ' && s.charAt(i+1)!=' ')
+		{
+			count++;
+		}
+	}
+	//System.out.print(count);
+	int j=0;
+	String t="";
+	String ar[]=new String[count+1];
+	for(int i=0;i<s.length();i++)
+	{
+		if(s.charAt(i)!=' ')
+		{
+			t=t+s.charAt(i);
+		}
+		else if(t!=" ")
+		{
+			ar[j]=t;
+			j++;
+			
+			t=" ";
+		}
+	} 
+	ar[j]=t;
+	for(int i=0;i<ar.length;i++)
+	{
+		ar[i]=reArrange(ar[i]);
+	}
+		for(int i=0;i<ar.length;i++)
+	{
+			System.out.print(ar[i] + " ");
+	}
+	}
+ public static String reArrange(String s)
+	{
+		String t="";
+		int n=0;
+		for(int i=0;i<s.length();i++)
+		{
+			if(s.charAt(i)>=48 && s.charAt(i)<=57)
+			{
+				n=n+s.charAt(i)-48;
+			}
+			else
+			{
+				t=t+s.charAt(i);
+			}
+		}
+		t=t+n;
+		return t;
+	}
+	
+	}
+	

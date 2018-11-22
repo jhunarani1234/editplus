@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class S7
+
+{
+	public static void main(String args[])
+	{
+		System.out.print("enter a string :");
+		Scanner scan = new Scanner(System.in);
+		String s=scan.nextLine();
+		String res="";
+		String u="";
+		for(int i=0;i<s.length();i++)
+		{
+			if(s.charAt(i)=='a')
+			{
+				System.out.print(u="*"+s);
+				//s.charAt(i-1)='*';
+				res=res+u;
+			}
+		}
+		//System.out.println(res);          ///remove the spaces,number,special character.
+	}
+}
