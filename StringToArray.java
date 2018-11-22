@@ -1,0 +1,40 @@
+import java.util.Scanner;
+class StringToArray
+{
+	public static void main(String args[])
+	{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the string");
+	String s=sc.nextLine();
+	int count=0;
+	for(int i=0;i<s.length()-1;i++)
+	{
+		if(s.charAt(i)==' '&& s.charAt(i+1)!=' ')
+		{
+			count++;
+		}
+	}
+	
+	int j=0;
+	String t="";
+	String ar[]=new String(count+1);
+	for(int i=0;i<s.length();i++)
+		{
+		if(s.charAt(i)!='')
+			{
+			t=t+s.charAt(i);
+			}
+			else if (t!="")
+			{
+				ar[j]=t;
+				j++;
+				t="";
+			}
+		}
+		ar[j]=t;
+		for(int i=0;i<ar.length;i++)
+		{
+			System.out.print(ar[i]);
+		}
+	}
+}

@@ -1,0 +1,33 @@
+import java.util.*;
+    import java.lang.*;
+    import java.io.*;
+    class Sample10
+    {
+        public static void main (String[] args) throws java.lang.Exception
+        {
+    Scanner scan=new Scanner(System.in);
+          int n=scan.nextInt();
+          int c1=0,c2=n*n;
+          for(int i=1;i<=n;i++)
+          {
+            for(int j=1;j<i;j++)
+            {
+              System.out.print("__");
+            }
+            for(int j=1;j<=n-i+1;j++)
+            {
+              System.out.print(++c1 +"*");
+            }
+            for(int j=1;j<=n+1-i;j++)
+            {
+              System.out.print(c2+j);
+            if(j<n-i+1)
+            {
+              System.out.print("*");
+            }
+            }
+            c2=c2-(n-i);
+            System.out.println();
+          }
+        }
+    }
